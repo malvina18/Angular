@@ -1,3 +1,37 @@
 <p>
   primer-componente works!
+  <br>
+  Esto es lo que contiene mi primer componente
 </p>
+
+<div>
+  Aqui pinto una "variable" de Java Script <br>
+  Variable de js: {{miVariable}}
+</div>
+
+<p>
+  Este es mi array: {{miArray}}
+</p>
+
+<div id="new">
+  Otra forma de escribir mi array
+
+  <ul>
+    <li>{{miArray[0]}}</li>
+    <li>{{miArray[1]}}</li>
+    <li>{{miArray[2]}}</li>
+    <li>{{miArray[3]}}</li>
+  </ul>
+</div>
+
+
+<div id="new1">
+  Otra forma de escribir mi array.Con Directiva
+
+  <ul>
+    <!--for each cosa hasta mi array-->
+    <li *ngFor="let cosa of miArray">{{cosa}}
+      <!--opcion:{{cosa}}-->
+    </li>
+    </ul>
+</div>
