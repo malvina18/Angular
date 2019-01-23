@@ -1,0 +1,25 @@
+p{
+  color: deeppink;
+  background-color: pink;
+}
+
+div{
+  background-color: deeppink;
+}
+
+table, th, td{
+  border: solid 1px black;
+  background-color: pink;
+
+}
+
+li{
+  color: palevioletred;
+}
+
+th, td{
+
+}
+
+
+

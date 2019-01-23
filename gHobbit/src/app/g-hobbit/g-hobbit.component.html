@@ -1,0 +1,51 @@
+<p>
+  g-hobbit works!
+</p>
+
+<!--Listados Hobbit-->
+<ul>
+
+  <!-- for -->
+  <li *ngFor="let hobbit of lista">
+    {{hobbit}}
+  </li>
+</ul>
+<div *ngIf="lista.length == 0">
+  Acho, se ha eliminado todos los hobbit !!!
+</div>
+
+<table *ngIf="lista.length > 0">
+
+  <thead>
+    <th>Nombre Del Hobbit</th>
+    <th> Accion </th>
+  </thead>
+
+  <tbody>
+
+  <tr *ngFor="let hobbit of lista; let i = index"> <!-- este va a ser nuestro bucle-->
+    <td>
+      {{hobbit}}
+    </td>
+    <td>
+      <button (click)="editarHobbit(hobbit, i)">Editar</button>
+      <button (click)="deleteHobbit(hobbit)">Borrar</button>
+    </td>
+  </tr>
+
+  </tbody>
+</table>
+
+<form>
+  <p>
+  <input type="text" name="nombre_hobbit"
+  [(ngModel)]="gHobbit" placeholder="Mete nuevo hobbit de eso">
+
+  <button (click)="AnadirModificarHobbit()"> {{accion.nombre}} Hobbit</button> ;
+
+  </p>
+</form>
+
+<div>
+  Esto es lo que tiene el input {{gHobbit}}
+</div>
