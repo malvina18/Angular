@@ -1,0 +1,12 @@
+
+<!--select de opciones  : se guarda en opSel-->
+
+<select [(ngModel)] = 'opSel' (ngModelChange) = 'seleccion ($event)'>
+  <option *ngFor = 'let op of opciones' [ngValue] = 'op'>
+    {{op.nombre}}
+  </option>
+</select>
+<!-- la opcion es igual a la que le pongo es-->
+<p *ngIf="opSel">
+  Has seleccionado :{{opSel.nombre}}. Valor: {{opSel.id}}
+</p>
