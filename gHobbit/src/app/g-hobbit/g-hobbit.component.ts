@@ -41,10 +41,15 @@ export class GHobbitComponent implements OnInit {
       this.lista.push(this.gHobbit);
     } else {
       this.lista[this.accion.indice] = this.gHobbit;
+      this.accion.id = 1;
+      this.accion.nombre = 'Añadir';
+      this.accion.indice = -1;
+
     }
   }
 
   /*Creamos el evento para editar hobbit:*/
+
   editarHobbit(hobbit, i) {
     this.gHobbit = hobbit;
     this.accion.id = 2;

@@ -38,10 +38,12 @@
 
 <form>
   <p>
+    <!-- muestra  [(ngModel)] enlace para input  desde la pagina a java scrip o viceversa -->
   <input type="text" name="nombre_hobbit"
   [(ngModel)]="gHobbit" placeholder="Mete nuevo hobbit de eso">
 
-  <button (click)="AnadirModificarHobbit()"> {{accion.nombre}} Hobbit</button> ;
+    <!-- muestra el modelo de js si se modifica el modelo se modifica el html-->
+  <button (click)="AnadirModificarHobbit()"> {{accion.nombre}} Hobbit</button>
 
   </p>
 </form>
