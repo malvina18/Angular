@@ -1,0 +1,30 @@
+<table id="personajes" class="estilo_Tabla_1">
+  <caption>Personajes STAR WARS</caption>
+  <thead>
+  <tr>
+    <th>Nombre</th>
+    <th>Altura</th>
+    <th>Peso</th>
+    <th>Nacimiento</th>
+    <th>Género</th>
+    <th>Homeworld</th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <tr *ngFor="let p of listaPer">
+    <td>{{p.name}}</td>
+    <td>{{p.height}}</td>
+    <td>{{p.mass}}</td>
+    <td>{{p.birth_year}}</td>
+    <td>{{p.gender}}</td>
+    <td><a href="#" (click)="pedirPlaneta($event, p.homeworld)"> {{p.homeworld}} </a></td>
+    <!-- <td>{{p.homeworld}}</td> -->
+  </tr>
+  </tbody>
+</table>
+<!--llamamos a app-planeta(component)
+ cuando hago click en el enlace me trae los datos si trae dato sino es null-->
+<div *ngIf="datosPlaneta">
+  <app-planeta [planeta]="datosPlaneta"></app-planeta>
+</div>

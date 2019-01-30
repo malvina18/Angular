@@ -1,22 +1,24 @@
-import {Injectable} from '@angular/core';
-import {HttpClient} from '@angular/common/http';
+import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
-@Injectable({
+@Injectable ({
   providedIn: 'root'
 })
 export class PAjaxService {
+    // Variable:
+    private urlPersonajes:string = "https://swapi.co/api/people/?format=json";
 
-  private urlPersonajes: string = 'http://swapi.co/api/people/?format=json';
-
-  /*crenado una variable de tipo http (objeto)*/
-  constructor(private http: HttpClient) {
+    // creamos un objeto de tipo HttpClient
+  constructor(private http: HttpClient) { }
+  // Creamos una función "peti" para hacer peticiones:
+  peti () {
+    console.log ( 'Toy en peti' );
+    // Hacemos la petición: (la devolvemos).
+    return this.http.get(this.urlPersonajes);
   }
-
-  // creamos funcion peti para hacer peticiones
-  peti() {
-    console.log('Tooy en peti');
-    // hacemos la peticion (devolvemos)
-    return this.http.get<any>(this.urlPersonajes);
-
+  // Creamos una funcion para hacer peticiones a las URL´s.
+  petiAurl (url:string) {
+    console.log( 'Toy en petiAurl' );
+    return this.http.get(url);
   }
 }
