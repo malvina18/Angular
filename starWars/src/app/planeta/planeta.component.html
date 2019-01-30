@@ -1,10 +1,15 @@
 <h3>Datos del planeta</h3>
-
+<!--para dar formato fecha ,comas etc (pipes)-->
 <div>
-  Nombre:{{planeta.name}}<br>
+
+  Poblacion formateada: {{(planeta.population == 'unknown') ? (planeta.population) : (planeta.population | number)}}<br>
+  Nombre:   {{planeta.name}}<br>
   Poblacion {{planeta.population}}<br>
-  Clima: {{planeta.climate}}<br>
-  Diametro: {{planeta.diameter}}<br>
+  Clima:    {{planeta.climate}}<br>
+  Diametro: {{planeta.diameter | number}} kilometro<br>
+  Periodo Orbital formateado:{{(planeta.orbital_period == 'unknown') ? (planeta.orbital_period) : (planeta.orbital_period )}} dias<br>
+  Periodo Orbital: {{planeta.orbital_period }} dias<br>
+  Periodo de rotacion: {{planeta.rotation_period }} horas <br>
   Gravedad: {{planeta.gravity}}<br>
   Url: {{planeta.url}}
 

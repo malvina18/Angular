@@ -1,3 +1,11 @@
+<!--Ponemos los botones de anterior y siguiente-->
+<div>
+  <button (click)="anterioresPer()" [disabled]="!(datos && datos.previous)">ANTERIOR</button>
+  <button (click)="siguientePer()" [disabled]="!(datos && datos.next)">SIGUIENTE</button>
+  <br><br>
+</div>
+
+<!-- CREAMOS LOS DATOS DONDE SE LISTARAN los personajes de starWARS-->
 <table id="personajes" class="estilo_Tabla_1">
   <caption>Personajes STAR WARS</caption>
   <thead>
@@ -23,6 +31,7 @@
   </tr>
   </tbody>
 </table>
+
 <!--llamamos a app-planeta(component)
  cuando hago click en el enlace me trae los datos si trae dato sino es null-->
 <div *ngIf="datosPlaneta">
