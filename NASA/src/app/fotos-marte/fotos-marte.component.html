@@ -1,0 +1,18 @@
+
+<h2>Mostrando lista de Fotos de Martes:</h2>
+
+<!--Lista Ordenada-->
+<ol *ngFor=" let f of listaFotos ">
+  <li>Imagen: {{f.id}}</li>
+  <li>Earth Date (fecha de la tierra): {{f.earth_date}}</li>
+      imagen :<a href="{{f.img_src}}"><img src="{{f.img_src}}"></a>
+  <li>Rover:</li>
+  <ul>
+    <li>Name (Nombre): {{f.rover.name}}</li>
+    <li>Launch date (Fecha de lanzamiento): {{f.rover.landing_date}}</li>
+    <li>Landing date(fecha de aterrizaje): {{f.rover.launch_date}}</li>
+    <li>Status "Estado": {{f.rover.status}}</li>
+  </ul>
+  <br><hr><hr>
+</ol>
+
