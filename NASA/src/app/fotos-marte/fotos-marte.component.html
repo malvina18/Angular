@@ -5,7 +5,7 @@
 <ol *ngFor=" let f of listaFotos ">
   <li>Imagen: {{f.id}}</li>
   <li>Earth Date (fecha de la tierra): {{f.earth_date}}</li>
-      imagen :<a href="{{f.img_src}}"><img src="{{f.img_src}}"></a>
+      imagen :<a href="{{f.img_src}}" target="_blank" ><img src="{{f.img_src}}"></a>
   <li>Rover:</li>
   <ul>
     <li>Name (Nombre): {{f.rover.name}}</li>
@@ -15,4 +15,14 @@
   </ul>
   <br><hr><hr>
 </ol>
+<br><hr><hr>
+
+<h3>Lista persona</h3>
+<div *ngFor="let p of listaPersona">
+  <li>DNI: {{p.DNI}}</li>
+  <li>NOMBRE: {{p.NOMBRE}}</li>
+  <li>APELLIDOS: {{p.APELLIDOS}}</li>
+  <hr><hr>
+</div>
+
 

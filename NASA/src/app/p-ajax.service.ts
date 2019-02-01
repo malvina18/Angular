@@ -18,5 +18,14 @@ private urlFotosNasa: string  =
     // Hacemos la petición: (la devolvemos).
     return this.http.get(this.urlFotosNasa);
   }
+// ejemplo de hacer  peticiones con post con un parametro
+  hacerPetiListaPersona() {
+    // creamos variable url para la url del localhost..
+    const url = 'http://localhost/AJAX/JQuery_ListaPersonas/servidor.php';
+    const parametro = {
+      servicio: 'listar'
+    }
+    return this.http.post(url, JSON.stringify(parametro));
+  }
 }
 

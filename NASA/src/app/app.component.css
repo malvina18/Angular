@@ -1,3 +1,6 @@
 h1{
   color: darkblue;
+  border: solid black;
+  background-color: palevioletred;
+  text-align: center;
 }
