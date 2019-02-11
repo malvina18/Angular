@@ -1,0 +1,41 @@
+<p>
+  Consultas de Facturas!!!
+</p>
+<select [(ngModel)]='opSel' (ngModelChange)='seleccion ($event)'>
+  <option *ngFor='let op of opcionesSelect' [ngValue]='op'>
+    Factura: {{op.NUMERO}} .
+    Fecha: {{op.FECHA}}
+  </option>
+</select>
+
+<div *ngIf='opSel'>
+  <app-lista-detalle [factura]='opSel'></app-lista-detalle>
+  <div>
+    <table border="solid 1px blue" *ngIf="opSel">
+      <thead>
+      <tr>
+        <th>ID</th>
+        <th>ID_FACTURAS</th>
+        <th>CANTIDAD</th>
+        <th>CONCEPTO</th>
+        <th>PRECIO</th>
+        <th>TIPO_IVAL</th>
+      </tr>
+      <tr *ngFor="let factura of listaFactura">
+        <td>{{factura.ID}}</td>
+        <td>{{factura.ID_FACTURA}}</td>
+        <td>{{factura.CANTIDAD}}</td>
+        <td>{{factura.CONCEPTO}}</td>
+        <td>{{factura.PRECIO}}</td>
+        <td>{{factura.TIPO_IVA}}</td>
+      </tr>
+      </thead>
+    </table>
+  </div>
+</div>
+
+<app-anade-detalle [idFactura] = "idFactura" (nuevoDetalle)="detalleAnadido()" )></app-anade-detalle>
+
+
+
+
