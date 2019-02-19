@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {Owner} from '../../models/owner';
-import {OwnersService} from "../../services/owners.service";
+import {OwnersService} from '../../services/owners.service';
+import {ActivatedRoute, Router} from "@angular/router";
 
 @Component({
   selector: 'app-form-owner',
@@ -8,9 +9,10 @@ import {OwnersService} from "../../services/owners.service";
   styleUrls: ['./form-owner.component.css']
 })
 export class FormOwnerComponent implements OnInit {
-  public owner: Owner;
+  private owner: Owner;
+  private insertado: boolean;
 
-  constructor(private ajax: OwnersService) {
+  constructor(private ajax: OwnersService, private route: ActivatedRoute, private router: Router) {
     this.owner = new Owner();
   }
 
@@ -21,9 +23,18 @@ export class FormOwnerComponent implements OnInit {
   // recibe como parametro un propietario (owner) (los datos introdicidos en el formulario)
   onSubmit(owner: Owner) {
     this.ajax.insertarOwner(owner).subscribe(data => {
-      owner = data;
+      this.insertado = <boolean>data;
+      console.log(this.insertado);
+
+      if (this.insertado) {
+        alert('Usuario insertado');
+        this.router.navigate(['/owners']);
+      } else {
+        alert('Usuario  no insertado ');
+      }
+
     });
-    console.log(owner);
-    alert('Aqui añado');
+
+
   }
 }
