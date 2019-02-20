@@ -19,7 +19,6 @@ export class OwnersService {
   }
 
   getOwnerPorId(idOwner) {
-
     const pa = {
       id: idOwner,
       accion: 'ObtenerOwnerId'
@@ -28,17 +27,48 @@ export class OwnersService {
     // Owner me devuelve el id osea un objeto de propietarios solo uno
     return this.http.post<Owner>(this.url, JSON.stringify(pa));
   }
-
+// insertar un owner en el formulario
   insertarOwner(owner: Owner) {
 
     const pa = {
       accion: 'AnadeOwner',
       owner: owner,
     }
-    console.log('Toy en peti Owners');
+    console.log('Toy en peti insertando owners');
     // Owner me devuelve el id osea un objeto de propietarios solo uno
-    return this.http.post(this.url, JSON.stringify(pa));
+    return this.http.post<any>(this.url, JSON.stringify(pa));
+  }
+// borramos el owner
+  delOwner(id: number) {
+    const pa = {
+      accion: 'BorraOwner',
+      id: id,
+      listado : 'NO'
+    }
+    console.log('Toy en peti boorrando un owners sin listado');
+    // Owner me devuelve el id osea un objeto de propietarios solo uno
+    return this.http.post<any>(this.url, JSON.stringify(pa));
+  }
+// borramos el owner y mostramos el listado
+  delOwnerList(id: number) {
+    const pa = {
+      accion: 'BorraOwner',
+      id: id,
+      listado : 'OK'
+    }
+    console.log('Toy en peti insertando owners');
+    // Owner me devuelve el id osea un objeto de propietarios solo uno
+    return this.http.post<any>(this.url, JSON.stringify(pa));
   }
 
-
+  // borramos el owner y mostramos el listado
+  updOwner(owner: Owner) {
+    const pa = {
+      accion: 'ModificaOwner',
+      owner: owner
+    }
+    console.log('Toy en peti insertando owners');
+    // Owner me devuelve el id osea un objeto de propietarios solo uno
+    return this.http.post<any>(this.url, JSON.stringify(pa));
+  }
 }

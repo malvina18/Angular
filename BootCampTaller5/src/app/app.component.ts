@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +6,18 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'BootcampTaller4';
+  title = 'BootcampTaller5';
+  // objeto navBar que va a tener atributos
+  public navBar = {
+    isNavbarCollapsed: true,
+    // para recoger el desplegable de owners para los submenus
+    owners: {
+      dropdown: true
+    },
+    vets: {
+      dropdown: true
+    }
+  }
+    constructor() {}
 }
+
