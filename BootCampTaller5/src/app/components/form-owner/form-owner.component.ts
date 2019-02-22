@@ -10,7 +10,6 @@ import {ActivatedRoute, Router} from '@angular/router';
 })
 export class FormOwnerComponent implements OnInit {
   private owner: Owner;
-  private insertado: boolean;
   private textoBoton: string;
 
   constructor(private ajax: OwnersService, private route: ActivatedRoute, private router: Router) {
@@ -29,23 +28,6 @@ export class FormOwnerComponent implements OnInit {
       });
     }
   }
-
-// funcion que se ejecuta cuando se pulsa el boton submit del formulario
-  // recibe como parametro un propietario (owner) (los datos introducidos en el formulario)
-  /* onSubmit(owner: Owner) {
-     this.ajax.insertarOwner(owner).subscribe(data => {
-       this.insertado = <boolean>data;;
-       console.log(this.insertado);
-
-       if (this.insertado) {
-         alert('Usuario insertado');
-         this.router.navigate(['/owners']);
-       } else {
-         alert('Usuario  no insertado ');
-       }
-
-     });
-   }*/
 
 // me hace la inserccion  de un prppietario y me devuelve a la pagina owner /callBack
   onSubmit(owner: Owner) {
