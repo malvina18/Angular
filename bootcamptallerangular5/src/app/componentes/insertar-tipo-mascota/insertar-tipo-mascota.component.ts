@@ -42,7 +42,7 @@ export class InsertarTipoMascotaComponent implements OnInit {
       this.tipoMascotaService.insertarTipoMascota(tipoMascota).subscribe(data => {
         this.onNew.emit(this.tipoMascota);
         this.tipoMascota = data;
-        alert('Especialidad añadida correctamente');
+        alert('tipo mascota añadida correctamente');
       });
     }
   }

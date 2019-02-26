@@ -12,6 +12,9 @@ import { DetallePropietariosComponent } from './componentes/detalle-propietarios
 import { ListarTipoMascotaComponent } from './componentes/listar-tipo-mascota/listar-tipo-mascota.component';
 import { DetalleTipoMascotaComponent } from './componentes/detalle-tipo-mascota/detalle-tipo-mascota.component';
 import { InsertarTipoMascotaComponent } from './componentes/insertar-tipo-mascota/insertar-tipo-mascota.component';
+import { ListarVeterinariosComponent } from './componentes/listar-veterinarios/listar-veterinarios.component';
+import { InsertarVeterinariosComponent } from './componentes/insertar-veterinarios/insertar-veterinarios.component';
+import { DetallesVeterinariosComponent } from './componentes/detalles-veterinarios/detalles-veterinarios.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +24,10 @@ import { InsertarTipoMascotaComponent } from './componentes/insertar-tipo-mascot
     DetallePropietariosComponent,
     ListarTipoMascotaComponent,
     DetalleTipoMascotaComponent,
-    InsertarTipoMascotaComponent
+    InsertarTipoMascotaComponent,
+    ListarVeterinariosComponent,
+    InsertarVeterinariosComponent,
+    DetallesVeterinariosComponent
   ],
   imports: [
     BrowserModule,

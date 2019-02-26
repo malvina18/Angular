@@ -6,6 +6,9 @@ import {DetallePropietariosComponent} from './componentes/detalle-propietarios/d
 import {ListarTipoMascotaComponent} from './componentes/listar-tipo-mascota/listar-tipo-mascota.component';
 import {DetalleTipoMascotaComponent} from './componentes/detalle-tipo-mascota/detalle-tipo-mascota.component';
 import {InsertarTipoMascotaComponent} from './componentes/insertar-tipo-mascota/insertar-tipo-mascota.component';
+import {ListarVeterinariosComponent} from './componentes/listar-veterinarios/listar-veterinarios.component';
+import {DetallesVeterinariosComponent} from './componentes/detalles-veterinarios/detalles-veterinarios.component';
+import {InsertarVeterinariosComponent} from './componentes/insertar-veterinarios/insertar-veterinarios.component';
 
 const routes: Routes = [
   {
@@ -31,6 +34,18 @@ const routes: Routes = [
   {
     path: 'tipoMascota-add/:id',
     component: InsertarTipoMascotaComponent
+  },
+  {
+    path: 'veterinarios',
+    component: ListarVeterinariosComponent
+  },
+  {
+    path: 'veterinarios/:id',
+    component: DetallesVeterinariosComponent
+  },
+  {
+    path: 'veterinarios-add/:id',
+    component: InsertarVeterinariosComponent
   }
 ];
 
