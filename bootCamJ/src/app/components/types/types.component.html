@@ -1,0 +1,18 @@
+<div class="row">
+  <h3 class="col-4">Lista de Animales</h3>
+
+  <div class="col-4">
+      <a routerLink="/types-add/-1">
+        <button class="btn btn-primary" type="button">
+          Añadir Animal
+        </button>
+      </a>
+  </div>
+  
+</div>
+
+<ul *ngFor="let datos of types">
+  <input type="text" value="{{datos.name}}" disabled>
+  <button type="button" class="btn btn-secondary" (click)="del(datos)">DEL</button>
+  <button type="button" class="btn btn-secondary" (click)="mod(datos.id)">MOD</button>
+</ul>

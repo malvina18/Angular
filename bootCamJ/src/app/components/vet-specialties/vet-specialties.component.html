@@ -1,0 +1,31 @@
+<div class="row">
+  <h3 class="col-4">Lista de Especialidades</h3>
+  <div class="col-4">
+    <a routerLink="/specialties-add/-1">
+      <button class="btn btn-primary" type="button">
+        Añadir especialidad
+      </button>
+    </a>
+  </div>
+</div>
+<br>
+<ul *ngFor="let datos of specialties">
+  <input type="text" value="{{datos.name}}" disabled>
+  <button type="button" class="btn btn-secondary" (click)="del(datos)">DEL</button>
+  <!--<button type="button" class="btn btn-secondary" (click)="mod(datos.id)">MOD</button>-->
+  <button type="button" class="btn btn-secondary" (click)="EditarEspecialidad(datos)">MOD</button>
+</ul>
+
+<a routerLink="">
+  <button class="btn btn-secondary" type="button">
+    Inicio
+  </button>
+</a>
+
+<button type="button" class="btn btn-secondary" (click)="mostrarAnadir()">ADD</button>
+
+<div *ngIf="confirmacion">
+  <!--llamo al parametro de entrada de add Specilality-->
+    <app-specialty-add (onNew)="onNewSpecialty($event)"[specialty]="editado"></app-specialty-add>
+</div>
+

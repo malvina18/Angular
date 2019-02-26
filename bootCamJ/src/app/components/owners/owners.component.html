@@ -1,0 +1,24 @@
+<div class="row">
+<h3 class="col-4">Lista de propietarios</h3>
+
+  <div class="col-4">
+    <a routerLink="/owners-add/-1">
+      <button class="btn btn-primary" type="button">
+        Añadir Propietario
+      </button>
+    </a>
+  </div>
+
+</div>
+
+  <ul *ngFor="let datos of owners">
+    <li><a routerLink="/owners/{{datos.id}}" routerLinkActive="active">
+      {{datos.firstName}} {{datos.lastName}} - {{datos.city}}
+      </a>
+      <button type="button" class="btn btn-secondary" (click)="del(datos)">DEL</button>
+
+      <button type="button" class="btn btn-secondary" (click)="mod(datos.id)">MOD</button>
+    </li>
+  </ul>
+
+

@@ -1,0 +1,24 @@
+<div class="container">
+    <form class="form-horizontal" #specialtiesForm="ngForm" (ngSubmit)="onSubmit(specialtiesForm.value)">
+  
+      <div class="form-group">
+          <label>Especialidad: </label>
+          <input type="text" class="form-control" required [(ngModel)]="specialties.name" name="name" #name="ngModel">
+          <div [hidden]="name.valid || name.pristine" class="alert alert-danger">
+            El nombre es obligatorio
+          </div>
+      </div>
+  
+      <div class="form-group">
+          <button class="btn btn-primary mr-4" type="submit" [disabled]="specialties.valid">
+            {{textoBoton}}
+          </button>
+          <a routerLink="/vet-specialties">
+            <button class="btn btn-secondary" type="button">
+              Cancelar
+            </button>
+          </a>
+      </div>
+  
+    </form>
+  </div>
