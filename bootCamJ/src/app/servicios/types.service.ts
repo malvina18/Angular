@@ -1,50 +1,51 @@
-import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { Pettype } from '../models/pettype';
+import {Injectable} from '@angular/core';
+import {HttpClient} from '@angular/common/http';
+import {Pettype} from '../models/pettype';
 
 @Injectable({
   providedIn: 'root'
 })
 export class TypesService {
 
-  constructor(private http: HttpClient) { }
-
-  getPet(){
-    let pa = JSON.stringify({
-      accion: "ListarPettypes"
-    });
-    return this.http.post<any>("http://localhost/ajax/petclinic/servicios.php",pa);
+  constructor(private http: HttpClient) {
   }
 
-  addPettype(types : Pettype){
+  getPet() {
     let pa = JSON.stringify({
-      accion: "AnadePettype",
+      accion: 'ListarPettypes'
+    });
+    return this.http.post<any>('http://localhost/ajax/petclinic/servicios.php', pa);
+  }
+
+  addPettype(types: Pettype) {
+    let pa = JSON.stringify({
+      accion: 'AnadePettype',
       pettype: types
     });
-    return this.http.post<any>("http://localhost/ajax/petclinic/servicios.php",pa);
+    return this.http.post<any>('http://localhost/ajax/petclinic/servicios.php', pa);
   }
 
-  getTypeById(id){
+  getTypeById(id) {
     let pa = JSON.stringify({
-      accion: "ObtenerTypeId",
+      accion: 'ObtenerTypeId',
       id: id
     });
-    return this.http.post<any>("http://localhost/ajax/petclinic/servicios.php",pa);
+    return this.http.post<any>('http://localhost/ajax/petclinic/servicios.php', pa);
   }
 
-  modPettype(types: Pettype){
+  modPettype(types: Pettype) {
     let pa = JSON.stringify({
-      accion: "ModificaPettype",
+      accion: 'ModificaPettype',
       pettype: types
     });
-    return this.http.post<any>("http://localhost/ajax/petclinic/servicios.php",pa);
+    return this.http.post<any>('http://localhost/ajax/petclinic/servicios.php', pa);
   }
 
-  delTypesList(id: number){
+  delTypesList(id: number) {
     let pa = JSON.stringify({
-      accion: "BorraPettype",
+      accion: 'BorraPettype',
       id: id
     });
-    return this.http.post<any>("http://localhost/ajax/petclinic/servicios.php",pa);
+    return this.http.post<any>('http://localhost/ajax/petclinic/servicios.php', pa);
   }
 }

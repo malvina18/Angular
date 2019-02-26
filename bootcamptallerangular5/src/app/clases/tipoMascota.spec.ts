@@ -1,7 +1,7 @@
-import { TipoMacota } from './tipoMacota';
+import { TipoMascota } from './tipoMascota';
 
-describe('TipoMacota', () => {
+describe('TipoMascota', () => {
   it('should create an instance', () => {
-    expect(new TipoMacota()).toBeTruthy();
+    expect(new TipoMascota()).toBeTruthy();
   });
 });

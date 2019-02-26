@@ -17,11 +17,11 @@ export class SpecialtyAddComponent implements OnInit {
   @Input() specialty: Specialties;
 
   constructor(private ServicioSpecialties: SpecialtiesService, private ruta: Router, private route: ActivatedRoute) {
-   //  this.specialty = new Specialties();
+    //  this.specialty = new Specialties();
   }
 
   ngOnInit() {
-    if (!this.specialty){
+    if (!this.specialty) {
       this.specialty = <Specialties>{};
     }
   }
@@ -33,10 +33,10 @@ export class SpecialtyAddComponent implements OnInit {
       // es una modificacion
       this.ServicioSpecialties.modSpecialties(specialty).subscribe(
         new_specialty => {
-         // console.log(new_specialty);
+          // console.log(new_specialty);
           alert('Especialidad modificada correctamente');
           // se elimina no se necesita
-         this.onNew.emit(null);
+          this.onNew.emit(null);
           this.specialty = new_specialty;
         });
     } else {

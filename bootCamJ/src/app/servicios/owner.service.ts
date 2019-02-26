@@ -1,58 +1,61 @@
-import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { Owner } from '../models/owner';
+import {Injectable} from '@angular/core';
+import {HttpClient} from '@angular/common/http';
+import {Owner} from '../models/owner';
 
 @Injectable({
   providedIn: 'root'
 })
 export class OwnerService {
 
-  constructor(private http: HttpClient) { }
-
-  getOwners(){
-    let pa = JSON.stringify({
-      accion: "ListarOwners"
-    });
-    return this.http.post<Owner[]>("http://localhost/ajax/petclinic/servicios.php",pa);
+  constructor(private http: HttpClient) {
   }
 
-  getOwnersById(id){
+  getOwners() {
     let pa = JSON.stringify({
-      accion: "ObtenerOwnerId",
+      accion: 'ListarOwners'
+    });
+    return this.http.post<Owner[]>('http://localhost/ajax/petclinic/servicios.php', pa);
+  }
+
+  getOwnersById(id) {
+    let pa = JSON.stringify({
+      accion: 'ObtenerOwnerId',
       id: id
     });
-    return this.http.post<Owner>("http://localhost/ajax/petclinic/servicios.php",pa);
+    return this.http.post<Owner>('http://localhost/ajax/petclinic/servicios.php', pa);
   }
 
-  addOwner(owner : Owner){
+  addOwner(owner: Owner) {
     let pa = JSON.stringify({
-      accion: "AnadeOwner",
+      accion: 'AnadeOwner',
       owner: owner
     });
-    return this.http.post<any>("http://localhost/ajax/petclinic/servicios.php",pa);
+    return this.http.post<any>('http://localhost/ajax/petclinic/servicios.php', pa);
   }
 
-  delOwnerList(id: number){
+  delOwnerList(id: number) {
     let pa = JSON.stringify({
-      accion: "BorraOwner",
+      accion: 'BorraOwner',
       id: id,
-      listado: "OK"
+      listado: 'OK'
     });
-    return this.http.post<Owner[]>("http://localhost/ajax/petclinic/servicios.php",pa);
+    return this.http.post<Owner[]>('http://localhost/ajax/petclinic/servicios.php', pa);
   }
-  delOwner(id: number){
+
+  delOwner(id: number) {
     let pa = JSON.stringify({
-      accion: "BorraOwner",
+      accion: 'BorraOwner',
       id: id,
-      listado: "FAIL"
+      listado: 'FAIL'
     });
-    return this.http.post<Owner[]>("http://localhost/ajax/petclinic/servicios.php",pa);
+    return this.http.post<Owner[]>('http://localhost/ajax/petclinic/servicios.php', pa);
   }
-  modOwner(owner: Owner){
+
+  modOwner(owner: Owner) {
     let pa = JSON.stringify({
-      accion: "ModificaOwner",
+      accion: 'ModificaOwner',
       owner: owner
     });
-    return this.http.post<any>("http://localhost/ajax/petclinic/servicios.php",pa);
+    return this.http.post<any>('http://localhost/ajax/petclinic/servicios.php', pa);
   }
 }
