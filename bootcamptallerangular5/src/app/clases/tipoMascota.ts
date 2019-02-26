@@ -1,4 +1,4 @@
-export class Pettype {
+export class TipoMascota {
     id: number;
     name: string;
 }
